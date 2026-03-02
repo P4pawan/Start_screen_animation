@@ -1,0 +1,336 @@
+{
+  "anm_background_panel": {
+    "type": "panel",
+    "layer": -1,
+    "size": ["100%", "100%"],
+    "clips_children": true,
+    "controls": [
+      { "anm_intro_stack@start.anm_intro_stack": {} },
+      { "anm_intro_stack_2@start.anm_intro_stack_2": {} },
+      { "anm_main_stack@start.anm_main_stack": {} }
+    ]
+  },
+
+  "img_template": {
+    "type": "image",
+    "fill": true,
+    "$frames_start|default": 1,
+    "size": ["100%", "100%"],
+    "bindings": [
+      {
+        "binding_name": "#collection_index",
+        "binding_type": "collection_details",
+        "binding_collection_name": "animated_background"
+      },
+      {
+        "binding_type": "view",
+        "source_property_name": "('textures/gui/backgrounds/start/'+$frames_type+'/'+(#collection_index + $frames_start))",
+        "target_property_name": "#texture"
+      }
+    ]
+  },
+
+  "anm_template": {
+    "anim_type": "offset",
+    "easing": "linear",
+    "from": "$offset",
+    "to": "$offset",
+    "next": "$next",
+    "$next|default": null,
+    "duration": "$duration_per_frame",
+    "variables": [
+      {
+        "requires": "$loop",
+        "$next": "@start.001_"
+      }
+    ]
+  },
+
+  "anm_main_stack@start.anm_intro_stack": {
+    "anims": ["start.main_wait"],
+    "layer": 0,
+    "$loop": true,
+    "$duration_per_frame": 0.06,
+    "$frames_type": "frames_main"
+  },
+
+  "anm_intro_stack_2@start.anm_intro_stack": {
+    "anims": ["start.anm_intro_2_wait"],
+    "$frames_start": 49,
+    "layer": -1
+  },
+
+  "anm_intro_stack": {
+    "type": "stack_panel",
+    "layer": -2,
+    "anchor_from": "top_left",
+    "anchor_to": "top_left",
+    "orientation": "vertical",
+    "size": ["100%", "100%"],
+    "offset": [0, "100%"],
+    "anims": ["start.001"],
+    "$loop|default": false,
+    "disable_anim_fast_forward": false,
+    "$frames_type|default": "frames_intro",
+    "$frames_start|default": 1,
+    "$duration_per_frame|default": 0.04166667,
+    "$frames|default": 48,
+
+    "collection_name": "animated_background",
+    "factory": {"control_name": "start.img_template"},
+    "property_bag": {"#frames": "$frames"},
+    "bindings": [
+      {
+        "binding_type": "view",
+        "source_property_name": "(#frames*1)",
+        "target_property_name": "#collection_length"
+      }
+    ]
+  },
+
+  //Frames
+
+  "main_wait@start.anm_template": {
+    "anim_type": "wait",
+    "duration": 4.00000032,
+    "next": "@start.001_",
+    "play_event": "button.start_size"
+  },
+
+  "anm_intro_2_wait@start.anm_template": {
+    "anim_type": "wait",
+    "duration": 2.00000016,
+    "next": "@start.001_",
+    "play_event": "button.start_size"
+  },
+
+  "001_@start.anm_template": {
+    "$offset": [0, "0%"],
+    "next": "@start.002"
+  },
+
+  "001@start.anm_template": {
+    "$offset": [0, "0%"],
+    "next": "@start.002",
+    "play_event": "button.start_size"
+  },
+  "002@start.anm_template": { "$offset": [0, "-100%"], "next": "@start.003" },
+  "003@start.anm_template": { "$offset": [0, "-200%"], "next": "@start.004" },
+  "004@start.anm_template": { "$offset": [0, "-300%"], "next": "@start.005" },
+  "005@start.anm_template": { "$offset": [0, "-400%"], "next": "@start.006" },
+  "006@start.anm_template": { "$offset": [0, "-500%"], "next": "@start.007" },
+  "007@start.anm_template": { "$offset": [0, "-600%"], "next": "@start.008" },
+  "008@start.anm_template": { "$offset": [0, "-700%"], "next": "@start.009" },
+  "009@start.anm_template": { "$offset": [0, "-800%"], "next": "@start.010" },
+  "010@start.anm_template": { "$offset": [0, "-900%"], "next": "@start.011" },
+  "011@start.anm_template": { "$offset": [0, "-1000%"], "next": "@start.012" },
+  "012@start.anm_template": { "$offset": [0, "-1100%"], "next": "@start.013" },
+  "013@start.anm_template": { "$offset": [0, "-1200%"], "next": "@start.014" },
+  "014@start.anm_template": { "$offset": [0, "-1300%"], "next": "@start.015" },
+  "015@start.anm_template": { "$offset": [0, "-1400%"], "next": "@start.016" },
+  "016@start.anm_template": { "$offset": [0, "-1500%"], "next": "@start.017" },
+  "017@start.anm_template": { "$offset": [0, "-1600%"], "next": "@start.018" },
+  "018@start.anm_template": { "$offset": [0, "-1700%"], "next": "@start.019" },
+  "019@start.anm_template": { "$offset": [0, "-1800%"], "next": "@start.020" },
+  "020@start.anm_template": { "$offset": [0, "-1900%"], "next": "@start.021" },
+  "021@start.anm_template": { "$offset": [0, "-2000%"], "next": "@start.022" },
+  "022@start.anm_template": { "$offset": [0, "-2100%"], "next": "@start.023" },
+  "023@start.anm_template": { "$offset": [0, "-2200%"], "next": "@start.024" },
+  "024@start.anm_template": { "$offset": [0, "-2300%"], "next": "@start.025" },
+  "025@start.anm_template": { "$offset": [0, "-2400%"], "next": "@start.026" },
+  "026@start.anm_template": { "$offset": [0, "-2500%"], "next": "@start.027" },
+  "027@start.anm_template": { "$offset": [0, "-2600%"], "next": "@start.028" },
+  "028@start.anm_template": { "$offset": [0, "-2700%"], "next": "@start.029" },
+  "029@start.anm_template": { "$offset": [0, "-2800%"], "next": "@start.030" },
+  "030@start.anm_template": { "$offset": [0, "-2900%"], "next": "@start.031" },
+  "031@start.anm_template": { "$offset": [0, "-3000%"], "next": "@start.032" },
+  "032@start.anm_template": { "$offset": [0, "-3100%"], "next": "@start.033" },
+  "033@start.anm_template": { "$offset": [0, "-3200%"], "next": "@start.034" },
+  "034@start.anm_template": { "$offset": [0, "-3300%"], "next": "@start.035" },
+  "035@start.anm_template": { "$offset": [0, "-3400%"], "next": "@start.036" },
+  "036@start.anm_template": { "$offset": [0, "-3500%"], "next": "@start.037" },
+  "037@start.anm_template": { "$offset": [0, "-3600%"], "next": "@start.038" },
+  "038@start.anm_template": { "$offset": [0, "-3700%"], "next": "@start.039" },
+  "039@start.anm_template": { "$offset": [0, "-3800%"], "next": "@start.040" },
+  "040@start.anm_template": { "$offset": [0, "-3900%"], "next": "@start.041" },
+  "041@start.anm_template": { "$offset": [0, "-4000%"], "next": "@start.042" },
+  "042@start.anm_template": { "$offset": [0, "-4100%"], "next": "@start.043" },
+  "043@start.anm_template": { "$offset": [0, "-4200%"], "next": "@start.044" },
+  "044@start.anm_template": { "$offset": [0, "-4300%"], "$next": "@start.045" },
+  "045@start.anm_template": { "$offset": [0, "-4400%"], "next": "@start.046" },
+  "046@start.anm_template": { "$offset": [0, "-4500%"], "next": "@start.047" },
+  "047@start.anm_template": { "$offset": [0, "-4600%"], "next": "@start.048" },
+  "048@start.anm_template": { "$offset": [0, "-4700%"] },
+
+  "start_screen": {
+    "low_frequency_rendering": true,
+    "screen_not_flushable": true,
+    "render_game_behind": true,
+    "cache_screen": true,
+    "load_screen_immediately": true,
+    "$screen_bg_content": "start.hub",
+    "$screen_animations": [
+      "@common.screen_exit_animation_push_fade",
+      "@common.screen_exit_animation_pop_fade"
+    ]
+  },
+
+  "hub": {
+    "type": "panel",
+    "size": ["100%", "100%"],
+    "controls": [
+      { "screen_bg_content@start.screen_bg_content": {} },
+      { "anm_background_panel@start.anm_background_panel": {} }
+    ]
+  },
+
+  "screen_bg_content": {
+    "type": "image",
+    "size": ["100%", "100%"],
+    "layer": 99,
+    "anims": ["start.button_adios"],
+    "texture": "textures/ui/White",
+    "controls": [
+      {
+        "button@common.button": {
+          "size": ["100%y", "50%"],
+          "layer": 100,
+          "$focus_enabled": false,
+          "sound_name": "start.introaudio",
+          "$on_cick": "button.start_size",
+          "controls": [
+            { "default@start.mojang_logo": {} },
+            { "hover@start.mojang_logo": { "$offset": [5, 5] } },
+            { "pressed@start.mojang_logo": { "$offset": [5, 5] } }
+          ],
+          "button_mappings": [
+            {
+              "mapping_type": "focused",
+              "from_button_id": "button.menu_ok",
+              "to_button_id": "$on_cick"
+            },
+            {
+              "mapping_type": "focused",
+              "from_button_id": "button.menu_select",
+              "to_button_id": "$on_cick"
+            }
+          ]
+        }
+      }
+    ]
+  },
+
+  "mojang_logo": {
+    "type": "panel",
+    "size": ["100%", "100%"],
+    "controls": [
+      {
+        "main": {
+          "type": "image",
+          "layer": 101,
+          "offset": "$offset",
+          "$offset|default": [0, 0],
+          "size": ["100%", "100%"],
+          "texture": "textures/ui/Mojang"
+        }
+      },
+      {
+        "shadow": {
+          "type": "image",
+          "layer": 100,
+          "offset": [5, 5],
+          "size": ["100%", "100%"],
+          "color": [0, 0, 0, 1],
+          "texture": "textures/ui/Mojang"
+        }
+      }
+    ]
+  },
+
+  "start_screen_content": {
+    "offset": [0, "200%"],
+    "anims": ["start.start_size", "start.start_alpha"],
+    "alpha": 0,
+    "propagate_alpha": true,
+    "disable_anim_fast_forward": false
+  },
+
+  "button_adios": {
+    "play_event": "button.start_size",
+    "anim_type": "offset",
+    "from": ["200%", "200%"],
+    "to": ["200%", "200%"]
+  },
+
+  "start_size": {
+    "play_event": "button.start_size",
+    "anim_type": "wait",
+    "duration": 4,
+    "next": "@start.start_size_2"
+  },
+
+  "start_size_2": {
+    "anim_type": "offset",
+    "from": [0, 0],
+    "to": [0, 0]
+  },
+
+  "start_alpha": {
+    "play_event": "button.start_size",
+    "anim_type": "wait",
+    "duration": 4,
+    "next": "@start.start_alpha_2"
+  },
+
+  "start_alpha_2": {
+    "anim_type": "alpha",
+    "from": 0,
+    "to": 0.99999998,
+    "duration": 1
+  },
+
+  "main_buttons_stack_panel/title_panel_content": {
+    "size": "$size",
+    "$size|default": ["100%", "10.36%x"],
+    "$splash_offset|default": ["-20%", 10],
+    "controls": [{ "splash_text@common_art.splash_text": { "offset": "$splash_offset" } }],
+    "variables": [
+      {
+        "requires": "$win10_edition",
+        "$size": ["100%", "10.36%x"],
+        "$splash_offset": ["-20%", 10]
+      },
+      {
+        "requires": "$osx_edition",
+        "$size": ["100%", "10.65%x"],
+        "$splash_offset": ["-20%", 10]
+      },
+      {
+        "requires": "($education_edition and $is_desktop)",
+        "$size": ["100%", 62],
+        "$splash_offset": ["-20%", 18]
+      },
+      {
+        "requires": "($education_edition and not $is_desktop)",
+        "$size": ["100%", 62],
+        "$start_screen": true,
+        "$splash_offset": ["-25%", 6]
+      },
+      {
+        "requires": "($pocket_edition or $console_edition)",
+        "$size": ["100%", "6.87%x"],
+        "$splash_offset": ["-20%", 8]
+      },
+      {
+        "requires": "$fire_tv",
+        "$size": ["100%", "10.65%x"],
+        "$splash_offset": ["-20%", 12]
+      },
+      {
+        "requires": "$gear_vr",
+        "$size": ["100%", "10.65%x"],
+        "$splash_offset": ["-20%", 12]
+      }
+    ]
+  }
+}

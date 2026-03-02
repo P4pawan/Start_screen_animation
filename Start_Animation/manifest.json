@@ -1,0 +1,32 @@
+{
+  "format_version": 2,
+  "header": {
+    "name": "§a§k0 §r§l§bSweatyHovac's §r§2§k0 §rNigernimation",
+    "description": "§r§2§l Hovac The Gernig",
+    "uuid": "7db51faa-400e-4304-9d34-dccafc7a95f8",
+    "version": [1, 0, 0],
+    "min_engine_version": [1, 21, 0],
+    "author": "SweatyHovac",
+    "license": "All Rights Reserved",
+    "in_game_author": "SweatyHovac"
+  },
+   "modules": [
+    {
+      "type": "resources",
+      "uuid": "2e9c1f0e-8e0e-487c-924b-4a26d68d8219",
+      "version": [1, 0, 0]
+    }
+  ],
+  "subpacks": [
+    {
+      "folder_name": "Enhanced",
+      "name": "§2§1High resol.§r§4(recommended for High-end device)",
+      "memory_tier": 1
+    },
+    {
+      "folder_name": "Normal",
+      "name": "§b§1Low resol.§r§4(recommended for Low-end device)",
+      "memory_tier": 1
+    }
+  ]
+}

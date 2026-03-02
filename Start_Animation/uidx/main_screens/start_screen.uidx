@@ -1,0 +1,24 @@
+{
+  "center_screen": {
+    "offset": [0, "200%"],
+    "anims": ["start.start_size", "start.start_alpha"],
+    "alpha": 0,
+    "propagate_alpha": true,
+    "disable_anim_fast_forward": false
+  },
+    "new_title_panel": { 
+    "controls": [
+      { 
+        "splash_text": {
+          "type": "custom",
+          "renderer": "splash_text_renderer",
+          "size": [ 0.1, 0.1 ],
+          "layer": 10,
+          "anchor_from": "top_right",
+          "anchor_to": "top_right",
+          "offset": [ 40, 32 ]
+        }
+      }
+    ]
+  }
+}

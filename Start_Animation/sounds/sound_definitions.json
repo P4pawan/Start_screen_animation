@@ -1,0 +1,12 @@
+{
+  "start.introaudio": {
+    "category": "ui",
+    "sounds": [
+      {
+        "load_on_low_memory": true,
+        "name": "sounds/start/introaudio",
+        "volume": 1
+      }
+    ]
+  }
+}
